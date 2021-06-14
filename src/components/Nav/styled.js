@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-
-  margin-top: 1rem;
+  height: 1rem;
+  padding: 1rem 0;
 
   a {
     text-decoration: none;
