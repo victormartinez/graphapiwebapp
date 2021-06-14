@@ -1,13 +1,12 @@
 import React from 'react';
 
-import Main from '../../components/Main';
-import TopBar from '../../components/TopBar';
+import BasePage from '../../components/BasePage';
 
 function NodePage() {
   return (
-    <Main>
-      <TopBar />
-    </Main>
+    <BasePage>
+      <div>NodePage</div>
+    </BasePage>
   );
 }
 

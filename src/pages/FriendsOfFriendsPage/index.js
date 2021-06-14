@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Main from '../../components/Main';
-import TopBar from '../../components/TopBar';
+import BasePage from '../../components/BasePage';
 
-function FriendsOfFriends() {
+function FriendsOfFriendsPage() {
   return (
-    <Main>
-      <TopBar />
-    </Main>
+    <BasePage>
+      <div>FriendsOfFriendsPage</div>
+    </BasePage>
   );
 }
 
-export default FriendsOfFriends;
+export default FriendsOfFriendsPage;
