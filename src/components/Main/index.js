@@ -11,5 +11,5 @@ function Main({ children }) {
 export default Main;
 
 Main.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node).isRequired,
+  children: PropTypes.node.isRequired,
 };

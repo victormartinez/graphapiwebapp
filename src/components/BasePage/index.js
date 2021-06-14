@@ -18,5 +18,5 @@ function BasePage({ children }) {
 export default BasePage;
 
 BasePage.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node),
+  children: PropTypes.node,
 };

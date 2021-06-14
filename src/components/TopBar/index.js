@@ -40,5 +40,5 @@ function TopBar({ children }) {
 export default TopBar;
 
 TopBar.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node),
+  children: PropTypes.node,
 };
