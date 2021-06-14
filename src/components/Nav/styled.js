@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Nav = styled.nav`
   height: 1rem;
   padding: 1rem 0;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1rem;
 
   a {
     text-decoration: none;
