@@ -10,7 +10,8 @@ export const Button = styled.button`
   &.success {
     background-color: #21df86;
   }
-  &.success:hover {
+  &:hover {
     opacity: 0.7;
+    color: #848484;
   }
 `;
