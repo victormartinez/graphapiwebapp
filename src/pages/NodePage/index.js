@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import BasePage from '../../components/BasePage';
 import Button from '../../components/Button';
+import FormNode from '../../components/FormNode';
 import Loading from '../../components/Loading';
 import { listNodes } from '../../services/adminapi';
 
@@ -11,6 +12,7 @@ function NodePage() {
 
   const [nodes, setNodes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -23,18 +25,25 @@ function NodePage() {
         setLoading(false);
         console.log(err)
       });
-  }, [])
+  }, [showForm])
 
   return (
     <BasePage>
       <S.ActionRow>
-        <Button text="Adicionar" variant="success" />
+        <Button text="+" variant="success" onClick={() => setShowForm(true)} />
       </S.ActionRow>
-      {loading && <Loading width="10%" />}
-      <S.List>
-        {nodes && nodes.map((name) => <S.ListItem>{name}</S.ListItem>)}
-        {(!nodes || nodes.length === 0) && <S.ListItem className='empty'>Sem resultados.</S.ListItem>}
-      </S.List>
+
+      {showForm && 
+        <FormNode onCancelClick={() => setShowForm(false)} afterRequestSuccess={() => setShowForm(false)} />
+      }
+
+      {!showForm && loading && <Loading width="10%" />}
+      {!showForm && 
+        <S.List>
+          {nodes && nodes.map((name) => <S.ListItem key={name}>{name}</S.ListItem>)}
+          {(!nodes || nodes.length === 0) && <S.ListItem className='empty'>Sem resultados.</S.ListItem>}
+        </S.List>
+      }
     </BasePage>
   );
 }
